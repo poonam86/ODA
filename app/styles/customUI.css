@@ -76,6 +76,8 @@ color: blue;
 a{
     text-decoration: none;
 }
+#selfin-container{
+}
 #selfin
 {
 background-image: url("./styles/background-small.png");
@@ -84,37 +86,39 @@ padding: 0px;
 margin-left: 5%;
 }
 #textintro{
-font-family: -webkit-body;
+	width: 80%;
+font-family: system-ui;
 margin-left: 15px;
-font-weight: bold;
+background-color:rgba(0, 0, 255, 0.3);
+border-radius:5px;
 color: black;
-padding: 0px;
-
+padding: 5px;
+padding-right:10px;
+font-size: 18px;
 }
 .selfin-style{
-    font-size: 8px;
+    font-size: 12px;
     font-family: system-ui;
     text-decoration: none;
     -webkit-transition: width 2s; /* Safari */
     transition: width 2s;
     background-color: #4CAF50; /* Green */
-
     border: none;
     color: white;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 11px;
+    font-size: 18px;
     margin: 3px 3px;
     cursor: pointer;
-    background-color: white;
-    color: black;
+    background-color: #0057b8;
+    color: white;
     border: 1px solid #008CBA;
     border-radius: 5px;
 }
 .selfin-style:hover{
-    background-color: #0057b8;
+    background-color: #01448f;
     color:white;
 }
 #headerEl{
