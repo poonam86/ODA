@@ -179,6 +179,7 @@ function customUI() {
     var headerElement = messengerDocument.getElementById('header');
     var introElement = messengerDocument.querySelector('.intro-pane');
 	var footerElement = messengerDocument.getElementById('footer');
+	var downloadButton = messengerDocument.getElementById('download-button');
     
     // Hide the Introductio Header.
     introElement.style.display='';
