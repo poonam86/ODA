@@ -67,10 +67,11 @@ customized header
 }
 #spara{
     font-size: 14px;
-font-family: monospace;
+font-family: Verdana;
 font-weight: 800;
 word-spacing: -4px;
-color: blue;
+color: black;
+margin-top: auto;
 
 }
 a{
@@ -78,12 +79,40 @@ a{
 }
 #selfin-container{
 }
+#suggestion-container{
+}
+#suggestion-box{
+	background-image: url("./styles/background-small.png");
+	padding: 2%;
+	margin-left: 5%;
+}
 #selfin
 {
 background-image: url("./styles/background-small.png");
 height: inherit;
 padding: 0px;
 margin-left: 5%;
+}
+.suggestion-style{
+	font-size: 8px;
+    font-family: system-ui;
+    text-decoration: none;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 3px 3px;
+    cursor: pointer;
+    background-color: #0057b8;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 5px;
 }
 #textintro{
 	width: 80%;

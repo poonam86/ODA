@@ -178,7 +178,7 @@ function customUI() {
 
     var headerElement = messengerDocument.getElementById('header');
     var introElement = messengerDocument.querySelector('.intro-pane');
-	var footerElement = messengerDocument.querySelector('footer');
+	var footerElement = messengerDocument.getElementById('footer');
     
     // Hide the Introductio Header.
     introElement.style.display='';
@@ -188,7 +188,7 @@ function customUI() {
     headerElement.innerHTML = introElement.innerHTML + headerElement.innerHTML;
     
     //quick response button
-    headerElement.insertAdjacentHTML("afterend", "<div id='selfin-container'><div id='selfin'><left><p id='spara'></p><a class='selfin-style' href='javascript:window.parent.order();'>Sales Order</a><a class='selfin-style' href='javascript:window.parent.offers();'>Instance URLs</a><a class='selfin-style' href='javascript:window.parent.reportIssue();'>Procurement Process Document</a></div></div>");
+    headerElement.insertAdjacentHTML("afterend", "<div id='selfin-container'><div id='selfin'></div></div>");
     //conversation intro text
     headerElement.insertAdjacentHTML("afterend", "<div id='textintro'><b>Hi Shubham! </b>How can I help you today?</div>");
     //with next prev button slider
@@ -197,7 +197,7 @@ function customUI() {
     headerElement.insertAdjacentHTML("afterend","<div id='headerEl' class='header-wrapper' style='background-color: rgb(0, 153, 204);'><img class='app-icon' alt='App icon' src='./images/virtual-assistant.png'><div class='app-name'>Oracle, MCE</div><div class='intro-text'>How do I help you?</div><div><div id='min' class='close-handle close-hidden'><a href='javascript:window.parent.minimize();'><i class='fa fa-minus'></i></a>&emsp;<a href='javascript:window.parent.Close();'><i class='fa fa-times'></i></a></div></div></div>")
     window.parent.currentSlide(1);
     headerElement.insertAdjacentHTML("afterend","<div id='prompt'>Do you want to end the conversation? <br><br>This will clear your chat history.<a class='selfin-style' href='javascript:window.parent.CloseYes();'>Yes</a><a class='selfin-style' href='javascript:window.parent.CloseNo();'>No</a></div>");
-	footerElement.insertAdjacentHTML("afterbegin","<button>hola</button>");
+	footerElement.insertAdjacentHTML("afterend","<div id='suggestion-container'><div id='suggestion-box'><left><p id='spara'>Suggestions:</br></p><a class='suggestion-style' href='javascript:window.parent.order();'>Sales Order</a><a class='suggestion-style' href='javascript:window.parent.offers();'>Instance URLs</a><a class='suggestion-style' href='javascript:window.parent.reportIssue();'>Procurement Process Document</a></div></div>");
     
     //The sample demo shipped with the Web SDK (app.js) can be modified to include this
     
