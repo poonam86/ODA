@@ -93,6 +93,22 @@ function saveAppId(e) {
 
 }
 
+function showPopup(popuptext){
+	$('#body-container').css('opacity', 0.2);
+	$('#web-messenger-container').css('opacity', 0.2);
+	$('#prompt-element').html(popuptext);
+	console.log('Poput Text')
+	$('.popup-prompt').css("display","block");
+	$('.popup-prompt').focus();
+	
+}
+
+function closePrompt(){
+	$('#body-container').css('opacity', 1);
+	$('#web-messenger-container').css('opacity', 1);
+	$('.popup-prompt').hide();
+}
+
 function loadChat(e) {
     if (e != null)
         e.preventDefault(); /* CUSTOM - Added if(e != null) */

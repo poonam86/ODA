@@ -5,7 +5,22 @@ function sendMessage(t) {
 function order() {
     Bots.sendMessage('Sales Order'); 
 }
-
+function exportToCSV(csvText){
+	$.ajax({
+		type: "POST",
+		url: "convert-csv",
+		data: {"csvtext": csvText,
+				"filename": "ts.csv"},
+		success: function(result){
+			console.log("Success CSV");
+			openUrl();
+			console.log("opened");
+		}
+	});
+}
+function openUrl(url){
+	window.open("http://localhost:3000/cache/ts.csv");
+}
 function offers() {
     Bots.sendMessage('Instance URL'); 
 }
@@ -44,6 +59,7 @@ function plusSlides(n) {
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
+
 function showSlides(n) {
 
     var messengerDocument = document.getElementById('web-messenger-container').contentDocument;
@@ -172,19 +188,24 @@ function showChatButton() {
 function customUI() {
      // access messenger iframe document element
     var messengerDocument = document.getElementById('web-messenger-container').contentDocument;
-
+	var messengerElement = document.getElementById('web-messenger-container');
+	messengerElement.insertAdjacentHTML("afterend","<div class=\"popup-prompt overlay\"><div class=\"prompt-container row\"><div id=\"prompt-element\"></div></br><button id=\"close-button\" onclick=\"closePrompt()\">Close</button></div></div>")
     // Add the custom CSS to the message container frame.
     messengerDocument.head.innerHTML += "\n<link rel='stylesheet' href='./styles/customUI.css' type='text/css'></link>\n";
 
     var headerElement = messengerDocument.getElementById('header');
     var introElement = messengerDocument.querySelector('.intro-pane');
 	var footerElement = messengerDocument.getElementById('footer');
+	var conservationElement = messengerDocument.getElementById('conversation');
 	var downloadButton = messengerDocument.getElementById('download-button');
-    
+    var messageVid = messengerDocument.getElementById('message-vid');
+	if(messageVid){
+		messageVid.pause();
+	}
     // Hide the Introductio Header.
     introElement.style.display='';
     headerElement.innerText = '';
-
+	
     // DO NOT ADD the buttons to the intro section.
     headerElement.innerHTML = introElement.innerHTML + headerElement.innerHTML;
     
@@ -226,9 +247,7 @@ function customUI() {
                 }
             } 
         }
-    
       return message;
     }
   });
- 
 }
