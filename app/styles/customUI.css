@@ -60,7 +60,11 @@ customized header
     margin-left: 15px
 }
 
-
+.skype-icon{
+	height: 24px;
+	width: 24px;
+	filter: invert(1);
+}
 
 #header{
     display: none;

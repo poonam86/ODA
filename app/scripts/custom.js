@@ -5,7 +5,8 @@ function sendMessage(t) {
 function order() {
     Bots.sendMessage('Sales Order'); 
 }
-function exportToCSV(csvText){
+function exportToCSV(csvText,filename){
+	var filename = filename || "ts.csv";
 	$.ajax({
 		type: "POST",
 		url: "convert-csv",
@@ -13,13 +14,13 @@ function exportToCSV(csvText){
 				"filename": "ts.csv"},
 		success: function(result){
 			console.log("Success CSV");
-			openUrl();
+			openUrl("ts.csv");
 			console.log("opened");
 		}
 	});
 }
-function openUrl(url){
-	window.open("http://localhost:3000/cache/ts.csv");
+function openUrl(filename){
+	window.open("http://localhost:8080/cache/"+filename);
 }
 function offers() {
     Bots.sendMessage('Instance URL'); 
@@ -161,6 +162,11 @@ function getUrlData() {
     return vars["bot"];
 }
 
+function openSkype() {
+	var RequestAdvisorId = "shubham.ganguly@infosys.com"
+	window.location = "sip:"+RequestAdvisorId;
+}
+
 function showChatButton() {
 
     console.log('Show Bot');
@@ -216,7 +222,7 @@ function customUI() {
     //with next prev button slider
     headerElement.insertAdjacentHTML("afterend", "<div id='cslider'> <div class='slideshow-container'> <div class='mySlides fade'> <div class='numbertext'>1 / 5</div><a class='tooltip' href='javascript:window.parent.imgurl(1)' ;><img src='./images/slider/logo-infosys.png' id ='infosys-img' style='width:100%'><span class='tooltiptext'>Infosys</span></a> <div class='text'></div></div><div class='mySlides fade'></div>");
     //our customized header
-    headerElement.insertAdjacentHTML("afterend","<div id='headerEl' class='header-wrapper' style='background-color: rgb(0, 153, 204);'><img class='app-icon' alt='App icon' src='./images/virtual-assistant.png'><div class='app-name'>Oracle, MCE</div><div class='intro-text'>How do I help you?</div><div><div id='min' class='close-handle close-hidden'><a href='javascript:window.parent.minimize();'><i class='fa fa-minus'></i></a>&emsp;<a href='javascript:window.parent.Close();'><i class='fa fa-times'></i></a></div></div></div>")
+    headerElement.insertAdjacentHTML("afterend","<div id='headerEl' class='header-wrapper' style='background-color: rgb(0, 153, 204);'><img class='app-icon' alt='App icon' src='./images/virtual-assistant.png'><div class='app-name'>Oracle, MCE</div><div class='intro-text'>How do I help you?</div><div><div id='min' class='close-handle close-hidden'><a href='javascript:window.parent.openSkype();'><img class='skype-icon' src='http://localhost:8080/images/skype-icon.jpg'></i></a>&emsp;<a href='javascript:window.parent.minimize();'><i class='fa fa-minus'></i></a>&emsp;<a href='javascript:window.parent.Close();'><i class='fa fa-times'></i></a></div></div></div>")
     window.parent.currentSlide(1);
     headerElement.insertAdjacentHTML("afterend","<div id='prompt'>Do you want to end the conversation? <br><br>This will clear your chat history.<a class='selfin-style' href='javascript:window.parent.CloseYes();'>Yes</a><a class='selfin-style' href='javascript:window.parent.CloseNo();'>No</a></div>");
 	footerElement.insertAdjacentHTML("afterend","<div id='suggestion-container'><div id='suggestion-box'><left><p id='spara'>Suggestions:</br></p><a class='suggestion-style' href='javascript:window.parent.order();'>Sales Order</a><a class='suggestion-style' href='javascript:window.parent.offers();'>Instance URLs</a><a class='suggestion-style' href='javascript:window.parent.reportIssue();'>Procurement Process Document</a></div></div>");
