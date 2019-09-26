@@ -2,7 +2,7 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var json2csv = require('json2csv').Parser;
-var Json2CsvParser = new json2csv({fields:[],header: true});
+var Json2CsvParser = new json2csv({header: true});
 var fs = require('fs');
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
@@ -22,13 +22,15 @@ app.listen(8080, function() {
 
 app.post('/convert-csv', function(req, res){
 	console.log("converting to csv file");
+	console.log(req.body.csvtext);
 	createCSVfile(req.body.filename,req.body.csvtext,res)
 });
 
 function createCSVfile(filename,body,res){
-	console.log(JSON.parse(body));
-	var csvData = Json2CsvParser.parse(body);
-	console.log("csv data: "+csvData);
+	//console.log(body.replace(/^"(.*)"$/,"$1"));
+	body=JSON.parse(body);
+	csvData=Json2CsvParser.parse(body);
+	console.log(csvData);
 	fs.writeFile(defaultDownloadPath+"/"+filename,csvData,function(error,resp){
 			res.status(200).send();
 	});

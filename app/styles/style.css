@@ -11,15 +11,9 @@ body {
 .navbar {
     border-radius: 0;
 }
-#popup-prompt{
-	position:absolute;
-	top: 80%;
-	left:47.5%;
-	display:none;
-}
 
 .prompt-container{
-	margin-top:20%;
+	margin-top:15%;
 	vertical-align:center;
 	margin-left: 47.5%;
 }
@@ -50,6 +44,14 @@ body {
   cursor: pointer; /* Add a pointer on hover */
   overflow: auto;
 }
+
+#popup-prompt{
+	position:absolute;
+	top: 80%;
+	left:47.5%;
+	display:none;
+}
+
 
 .navbar-brand {
     color: #fff;
