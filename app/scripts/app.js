@@ -125,7 +125,10 @@ function loadChat(e) {
         console.log(err);
     });
 }
-
+function getReqDate(){
+	var todate= conversationElement.getElementById('todate');
+	console.log(todate.value)
+}
 function clearChat(e) {
     if (e != null)
         e.preventDefault(); /* CUSTOM - Added if(e != null) */

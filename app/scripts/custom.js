@@ -166,7 +166,13 @@ function openSkype() {
 	var RequestAdvisorId = "shubham.ganguly@infosys.com"
 	window.location = "sip:"+RequestAdvisorId;
 }
-
+function queryReqDate(){
+	var messengerDocument = document.getElementById('web-messenger-container').contentDocument;
+	var conversationElement = messengerDocument.getElementById('conversation');
+	var fromdate = messengerDocument.getElementById('fromdate');
+	var todate= messengerDocument.getElementById('todate');
+	sendMessage(fromdate.value.toString()+" to "+todate.value.toString());
+}
 function showChatButton() {
 
     console.log('Show Bot');

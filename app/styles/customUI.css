@@ -24,6 +24,10 @@ customized header
     border-radius: 0
 }
 
+.web-messenger-container:{
+	border: 2px thick;
+}
+
 #headerEl .fa {
     line-height: 28px;
     color: #333;
