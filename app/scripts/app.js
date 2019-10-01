@@ -64,7 +64,7 @@ e.__onWebMessengerHostReady__ = function (t) {
     u.responseType = "json",
     u.send()
 }
-(window, document, "Bots", "http://localhost:8080/bots-client-sdk-js");
+(window, document, "Bots", "http://129.213.108.141:8080/bots-client-sdk-js");
 
 function loadAppId() {
     var appId = window.localStorage.getItem("appId");
