@@ -181,6 +181,31 @@ margin-left: 5%;
 	padding-right:10px;
 	font-size: 18px;
 }
+.tech-supp{
+    font-size: 12px;
+	font-weight: bold;
+    font-family: system-ui;
+    text-decoration: none;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 3px 3px;
+    cursor: pointer;
+    background-color: #0057b8;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 5px;
+}
+.tech-supp:hover{
+    background-color: #01448f;
+    color:white;
+}
 .selfin-style{
     font-size: 12px;
     font-family: system-ui;

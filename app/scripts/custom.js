@@ -3,7 +3,7 @@ function sendMessage(t) {
 }
 
 function order() {
-    Bots.sendMessage('Sales Order'); 
+    Bots.sendMessage('Get Requisition Details'); 
 }
 function exportToCSV(csvText,filename){
 	console.log(csvText);
